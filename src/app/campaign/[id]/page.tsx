@@ -19,6 +19,7 @@ import {
   ArrowLeft,
   CheckCircle2,
   Heart,
+  History,
 } from 'lucide-react';
 import { useCampaigns } from '@/context/CampaignContext';
 import { useWallet } from '@/context/WalletContext';
@@ -26,6 +27,7 @@ import MilestoneTimeline from '@/components/MilestoneTimeline';
 import DonateModal from '@/components/DonateModal';
 import VotingModal from '@/components/VotingModal';
 import ProofSubmissionModal from '@/components/ProofSubmissionModal';
+import { getProofsForCampaign } from '@/lib/testnetProofData';
 
 export default function CampaignDetailPage() {
   const params = useParams();
@@ -34,6 +36,7 @@ export default function CampaignDetailPage() {
   const { isConnected, publicKey, truncateAddress } = useWallet();
 
   const campaign = getCampaignById(campaignId);
+  const onChainProofs = getProofsForCampaign(campaignId);
 
   // Modals state
   const [isDonateOpen, setIsDonateOpen] = useState(false);
@@ -94,7 +97,7 @@ export default function CampaignDetailPage() {
       {/* Main Campaign Header & Sidebar Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
         
-        {/* Left 8 Cols: Media, Pitch, Milestones, Updates */}
+        {/* Left 8 Cols: Media, Pitch, Milestones, On-Chain Proofs, Updates */}
         <div className="lg:col-span-8 space-y-10">
           
           {/* Title & Tagline */}
@@ -161,6 +164,76 @@ export default function CampaignDetailPage() {
               isCreator={isCreator}
               isDonor={isDonor}
             />
+          </div>
+
+          {/* SECTION: On-Chain Backers & Transaction Proofs */}
+          <div className="p-6 sm:p-8 rounded-3xl bg-gray-900/70 border border-gray-800 space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-800 pb-4">
+              <div>
+                <h3 className="font-heading font-bold text-xl text-white flex items-center gap-2">
+                  <History className="w-5 h-5 text-cyan-400" />
+                  <span>On-Chain Backers & Transaction Proofs ({onChainProofs.length})</span>
+                </h3>
+                <p className="text-xs text-gray-400 mt-1">
+                  Real Stellar Testnet transactions verified on the ledger.
+                </p>
+              </div>
+
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-950 text-emerald-300 border border-emerald-800">
+                100% On-Chain Escrowed
+              </span>
+            </div>
+
+            {onChainProofs.length === 0 ? (
+              <p className="text-xs text-gray-400 py-3">No backers recorded yet. Be the first to back this campaign!</p>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs border-collapse font-mono">
+                  <thead>
+                    <tr className="border-b border-gray-800 text-gray-400 uppercase text-[11px] font-sans">
+                      <th className="py-2.5 px-3 font-semibold">Backer Name</th>
+                      <th className="py-2.5 px-3 font-semibold">Stellar Wallet</th>
+                      <th className="py-2.5 px-3 font-semibold">Contributed</th>
+                      <th className="py-2.5 px-3 font-semibold text-right">Explorer Proof</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-800/60 font-sans">
+                    {onChainProofs.map((proof) => (
+                      <tr key={proof.User_ID} className="hover:bg-gray-800/30 transition-colors">
+                        <td className="py-3 px-3 font-semibold text-white">
+                          {proof.User_Name}
+                        </td>
+                        <td className="py-3 px-3 font-mono text-[11px] text-cyan-300">
+                          <a
+                            href={proof.StellarExpert_Account_URL}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hover:underline flex items-center gap-1"
+                          >
+                            <span>{proof.Stellar_Wallet_Address.substring(0, 6)}...{proof.Stellar_Wallet_Address.substring(proof.Stellar_Wallet_Address.length - 4)}</span>
+                            <ExternalLink className="w-3 h-3 text-gray-500" />
+                          </a>
+                        </td>
+                        <td className="py-3 px-3 font-mono font-bold text-white">
+                          {proof.Donated_Amount_XLM} XLM
+                        </td>
+                        <td className="py-3 px-3 text-right">
+                          <a
+                            href={proof.StellarExpert_Tx_URL}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-semibold text-cyan-300 bg-cyan-950/70 border border-cyan-800/70 hover:bg-cyan-900/80 hover:border-cyan-500 transition-all"
+                          >
+                            <span>StellarExpert</span>
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
 
           {/* Creator Updates Feed */}
