@@ -19,10 +19,10 @@
 | **3** | **Export Responses to Public Excel / Google Sheet**<br>*(Attached in README with complete user details)* | `✅ DONE` | • **Live Google Sheets (62 Responses)**: [MileStoneFund User Feedback Responses](https://docs.google.com/spreadsheets/d/1TUhfnZIVLS3bGfHjWJHlgp_QiMxpFWB0j_b3rac8Qp8/edit?usp=sharing)<br>• **Local CSV Export**: [`docs/TESTNET_TRANSACTIONS_62_USERS.csv`](file:///c:/Users/hp/Desktop/MilesStoneFund/docs/TESTNET_TRANSACTIONS_62_USERS.csv) |
 | **4** | **Two Required Tables in README**<br>*(1. Users Onboarded: 10+ users, 2. Feedback Implementation: 10+ users with Commit IDs)* | `✅ DONE` | • **Table 1 (62 Users)**: [Section 10 — Complete User Feedback Table](#10-user-onboarding--feedback-collection)<br>• **Table 2 (15 Implemented Features)**: [Section 11 — 15 Implemented Feedbacks & Commits](#11-improvement-roadmap-15-user-feedbacks-implemented-in-codebase) |
 | **5** | **Product Improvements with Git Commit Links**<br>*(Improve product based on feedback with commit links)* | `✅ DONE` | • **15 Features Implemented** with direct Git Commit links ([Section 11](#11-improvement-roadmap-15-user-feedbacks-implemented-in-codebase)) |
-| **6** | **Live Deployed dApp Link & Analytics/Monitoring**<br>*(Deployed Web App & Telemetry dashboard)* | `⏳ PENDING` | • **Codebase Ready**: Full Next.js 14 dApp runs locally on `localhost:3000`<br>• **Action Required**: Deploy repository to Vercel/Netlify and add live URL here.<br>• **Telemetry Dashboard**: Built in `/analytics` |
+| **6** | **Live Deployed dApp Link & Analytics/Monitoring**<br>*(Deployed Web App & Telemetry dashboard)* | `✅ DONE` | • **Live Deployed dApp**: [https://miles-stone-fund.vercel.app/](https://miles-stone-fund.vercel.app/)<br>• **Telemetry & On-Chain Analytics Dashboard**: `/analytics` |
 | **7** | **Pitch Deck (PPT)**<br>*(Problem, Solution, Market Opportunity, Architecture, Growth Strategy, Roadmap)* | `✅ DONE` | • **12-Slide Pitch Deck Document**: [`docs/PITCH_DECK.md`](file:///c:/Users/hp/Desktop/MilesStoneFund/docs/PITCH_DECK.md) |
 | **8** | **Demo Video Showcase & Walkthrough**<br>*(Showcasing product, user flow, real use cases)* | `⏳ PENDING` | • **3-4 Min Script & Shot List Ready**: [`docs/DEMO_VIDEO_SCRIPT.md`](file:///c:/Users/hp/Desktop/MilesStoneFund/docs/DEMO_VIDEO_SCRIPT.md)<br>• **Action Required**: Record Loom/YouTube video following script and insert link here. |
-| **9** | **20+ Meaningful Commits & Updated Documentation**<br>*(Active git history, architecture diagrams, user testing kit)* | `✅ DONE` | • **45+ Conventional Commits**: [GitHub Commit History](https://github.com/ranjanmehta980-eng/MilesStoneFund/commits/main)<br>• **Architecture Diagram**: [Section 8 — System Architecture](#8-system-architecture) |
+| **9** | **20+ Meaningful Commits & Updated Documentation**<br>*(Active git history, architecture diagrams, user testing kit)* | `✅ DONE` | • **46+ Conventional Commits**: [GitHub Commit History](https://github.com/ranjanmehta980-eng/MilesStoneFund/commits/main)<br>• **Architecture Diagram**: [Section 8 — System Architecture](#8-system-architecture) |
 
 ---
 
@@ -49,7 +49,7 @@ The Stellar blockchain and Soroban smart contract environment provide the ideal 
 
 ## 3. Live Demo & Media Links
 
-- 🌐 **Live Deployed dApp**: `[Pending User Deployment on Vercel/Netlify]` *(Instructions in Section 9)*
+- 🌐 **Live Deployed dApp**: [https://miles-stone-fund.vercel.app/](https://miles-stone-fund.vercel.app/)
 - 🎬 **Demo Video Walkthrough**: `[Pending User Recording — Follow script in docs/DEMO_VIDEO_SCRIPT.md]`
 - 📑 **Pitch Deck Presentation**: [docs/PITCH_DECK.md](file:///c:/Users/hp/Desktop/MilesStoneFund/docs/PITCH_DECK.md)
 - 📋 **User Testing & Feedback Kit**: [docs/USER_TESTING_KIT.md](file:///c:/Users/hp/Desktop/MilesStoneFund/docs/USER_TESTING_KIT.md)
