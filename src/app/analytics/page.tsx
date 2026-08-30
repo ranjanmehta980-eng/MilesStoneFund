@@ -15,6 +15,7 @@ import {
   ExternalLink,
   Cpu,
   Layers,
+  CheckCircle2,
 } from 'lucide-react';
 import { useCampaigns } from '@/context/CampaignContext';
 import { AnalyticsService, AnalyticsEvent } from '@/lib/analytics';

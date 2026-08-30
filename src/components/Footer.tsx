@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ShieldCheck, Github, ExternalLink, MessageSquare, Terminal, Heart } from 'lucide-react';
+import { ShieldCheck, ExternalLink, MessageSquare, Heart, Code2 } from 'lucide-react';
 import { STELLAR_CONFIG } from '@/lib/stellar';
 
 export default function Footer() {
@@ -121,7 +121,7 @@ export default function Footer() {
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 w-full px-3 py-2 rounded-lg bg-gray-800/80 border border-gray-700 text-gray-300 hover:text-white hover:bg-gray-800 text-xs font-medium transition-all"
               >
-                <Github className="w-3.5 h-3.5" />
+                <Code2 className="w-3.5 h-3.5 text-cyan-400" />
                 GitHub Repository
               </a>
             </div>

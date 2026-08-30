@@ -2,7 +2,7 @@ import {
   isConnected,
   isAllowed,
   setAllowed,
-  getUserInfo,
+  getAddress,
   requestAccess,
   signTransaction,
   getNetwork,
@@ -31,8 +31,8 @@ export interface WalletState {
  */
 export async function checkFreighterInstalled(): Promise<boolean> {
   try {
-    const connected = await isConnected();
-    return !!connected;
+    const res = await isConnected();
+    return res && res.isConnected ? true : false;
   } catch {
     return false;
   }
@@ -49,16 +49,19 @@ export async function connectFreighterWallet(): Promise<{ publicKey: string; net
     }
 
     const access = await requestAccess();
-    if (!access) {
-      throw new Error('Access denied by user.');
+    if (access.error || !access.address) {
+      throw new Error(access.error || 'Access denied by user.');
     }
 
-    const userInfo = await getUserInfo();
-    const network = await getNetwork();
+    let networkName = 'TESTNET';
+    try {
+      const net = await getNetwork();
+      networkName = net.network || 'TESTNET';
+    } catch {}
 
     return {
-      publicKey: userInfo.publicKey,
-      network: network.network,
+      publicKey: access.address,
+      network: networkName,
     };
   } catch (error: any) {
     console.error('Freighter connection error:', error);
