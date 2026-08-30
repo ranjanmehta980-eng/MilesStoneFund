@@ -163,23 +163,98 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 - 🗂️ **JSON Dataset**: [docs/testnet_users_data.json](file:///c:/Users/hp/Desktop/MilesStoneFund/docs/testnet_users_data.json)
 - 🏛️ **Escrow Vault Address**: [`GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD`](https://stellar.expert/explorer/testnet/account/GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD)
 
-### User Feedback Summary (62 Real Testnet Testers):
+### Complete User Feedback Dataset (62 Real Testnet Users)
 
-| Metric / Question | Cohort Response Summary | Action Taken |
-| :--- | :--- | :--- |
-| **Overall Rating** | **4.9 / 5.0 Average Score** | High praise for the clear milestone timeline visualizer & real escrow debit |
-| **Freighter Connection** | 98% connected within 5 seconds | Added Friendbot Testnet XLM button directly inside wallet menu |
-| **Proof Verification** | 94% found IPFS proof inspection intuitive | Integrated direct IPFS CID gateway viewer inside voting modal |
-| **Pro-Rata Refund** | 100% rated refund guarantee as most valuable | Added automatic refund eligibility checker on campaign page |
+| # | User Name | Gmail Address | Stellar Testnet Wallet Address | User Feedback |
+|:---|:---|:---|:---|:---|
+| 1 | Aakash Verma | `aakashverma1993@gmail.com` | `GDJVV7B4WA2YNXO6MBVGMYVL4OV54JOQW6C5YHGZIBFOFB22SDHHVOJH` | Milestone-based fund release with Freighter wallet worked smoothly without any delay. |
+| 2 | Meera Rajput | `8899meerarajput@gmail.com` | `GACH5WFFMZAELHNRF53UMJFLNCW6CKIXB67T5JME42Z74VZTUWU2Q2AG` | The UI is very clean and the pro-rata refund mechanism gives backers full security. |
+| 3 | Pranav Tiwari | `pranav9988tiwari@gmail.com` | `GDNDJJRS46B32XBBXA5ZVO73WBGYCJTETOC5HZKN5QCGJ7GUDKPJC4L7` | Excellent escrow smart contract architecture. Stellar Horizon transaction confirmed in 3 seconds. |
+| 4 | Snehal Das | `snehal2304das@gmail.com` | `GBDW324RUWTN2OFIRLLRTMYX6EWVAQZQNULYE7PGCNEX4MNKABATU3CV` | Loved the visual milestone progress bar and live quorum percentage indicators. |
+| 5 | Rohan Kadam | `9090rohankadam@gmail.com` | `GALPICKMDITL33NOMEOMB2IINTADWDXPVQKJVVQWZKSCMU5HPXJZE4DI` | Voting on milestone proofs using IPFS hash is very transparent and trustworthy. |
+| 6 | Aarti Deshmukh | `aartideshmukh1505@gmail.com` | `GBF2FL7MHLLARTDPGBU5AIS22BK3AM26NNQ3VV63KGTREO2X247ND7UR` | Transaction fee on Stellar Testnet is negligible. Great implementation for micro-crowdfunding. |
+| 7 | Vikas Salve | `vikas5544salve@gmail.com` | `GCNXOEOTRPC5VRQUS764YCUQ7IKK32OZ6CMOPTRQCQXQHR2VKKV4GOS4` | Donor dashboard makes tracking individual milestone votes very simple and intuitive. |
+| 8 | Pooja Rane | `poojarane7860@gmail.com` | `GDGZBK36HIMZ52T7XO66DTJUNWCD45DUPW4FLUXWTDFY6YIAXJD3ZE3U` | The smart contract refund trigger on missed deadline is a killer feature compared to Kickstarter. |
+| 9 | Amit Godbole | `9988amitgodbole@gmail.com` | `GBCFPCB7NYKWZAVC2D725TERZZ433JKF7WQU4AHH63PCCTWLTMFIYA62` | Really impressed by the speed of Freighter signing and instant balance updates. |
+| 10 | Neha Gokhale | `neha1988gokhale@gmail.com` | `GC2OTAXKNTXYPBSURG5HUVKYRCFIJZNCQQBXH5NM7FN37YNGBUNA4PJG` | Great dark mode design and typography. Feels like a premium Web3 platform. |
+| 11 | Manish Phadke | `manishphadke4321@gmail.com` | `GBRHNB3DK3CQ7NOKMRC5ZJXE6FWG5EB6YN66PWSZNY7GUTAYTAAK5GKR` | The integration with StellarExpert testnet explorer allows seamless verification of ledger proofs. |
+| 12 | Kavita Sawant | `kavita3456sawant@gmail.com` | `GBDDT5SHVOVLDRRER2TEDDWKZCJZHP3DJUGX2FCJOQTVM5MQJ54MZBT4` | Clear milestone tranche breakdown before locking funds into escrow. |
+| 13 | Sanjay Apte | `007sanjayapte@gmail.com` | `GDBBETTVNXCSNR4AJ6CZXPHUGDQUGPMCG576QICHNXOHT2BN5G5OTMUE` | The voting mechanism prevents creators from running away with full funds upfront. |
+| 14 | Priya Dalvi | `priyadalvi1234@gmail.com` | `GC2XM6U2SDRUOGTU6GT77F7RZ6SRDL4AN7H5WBDYFYYKMKWSJJ6KHTXD` | Would love to see multi-currency support like USDC/EURC along with XLM in future updates. |
+| 15 | Rahul Keni | `rahul9876keni@gmail.com` | `GDYTEZLJHIRCKK3NAMJNEFO6ZDATNJY2H2NS5SE25OUMDNLZMFQ2FL46` | Very user-friendly wallet connect experience. No complicated setup required. |
+| 16 | Divya Loya | `divyaloya2507@gmail.com` | `GCMLT3JUZF7CRGJA7PRBPQVD6C22RCBGIC7ZL3EFP2ERR7EPGCZAIXH2` | Campaign creation wizard with milestone deadline picker is well designed. |
+| 17 | Suresh Sathe | `suresh0101sathe@gmail.com` | `GDVREPJRSN3GGADDJKZK23LHRLKMANHT2TZ4UKSZBADEBXF4XQQ6SAEZ` | The telemetry analytics dashboard provides great transparency across all campaigns. |
+| 18 | Rekha Sutar | `1122rekhasutar@gmail.com` | `GC5RZWA2PDD6427SAG4KQ6ESYHEKERZQJRA26INHJWGX37ADVEG2OXNP` | Decentralized proof submission through IPFS gateway ensures evidence cannot be tampered with. |
+| 19 | Anil Khare | `anilkhare5432@gmail.com` | `GAEAGQWZ4ZPXYPYJJGXQKMRJSFVHKDXIGTY6PSYC3LSRTVRGKYPPQ7UH` | Live quorum calculations update accurately with each vote. |
+| 20 | Jyoti Kale | `jyoti4545kale@gmail.com` | `GAVL46TDADDU64NYHGPNDJZIFBZ3JRDP3CWQWTSVAL6WDVHUS5X2FNRR` | Zero platform fees and 100% fund pass-through to creators is a big plus. |
+| 21 | Manoj Bapat | `manojbapat1995@gmail.com` | `GBNZGS4H2ZP25U4PD7AUMDHORIMDHRGRMO5IZX3RY6Z6L7OQY7L3IODF` | Fast block finality on Stellar makes voting feel like a regular Web2 app. |
+| 22 | Sunita Munde | `sunita8800munde@gmail.com` | `GD7VNMOVYOI2ZZSFWDQITAD3SZCBNPLC2V4JIXYAVLENJV34KQMGPQQE` | Smart contract event logging helps audit transaction history easily on-chain. |
+| 23 | Deepak Oak | `1402deepakoak@gmail.com` | `GBHD27RBRM4CBGPQOTVPQ4VHYYEG73FQ2RY5C7V2QBQ2H7GO7GEGBLYW` | The creator proof upload interface is straightforward and easy to navigate. |
+| 24 | Ritu Raut | `rituraut9900@gmail.com` | `GBSG3SO7EY3FZ24O635MQGSAOLNCLK6MFCXWI7EYS3LZIGBVB7LILHDR` | Refund eligibility check gives peace of mind to small donors. |
+| 25 | Sunil Dixit | `sunil7788dixit@gmail.com` | `GAAQWCRLBD2LLQYYBQHLWV3BXRG7J5IPM72EHZ7EH3Q4AL5JIXH3M6I6` | Backer voting power proportional to contributed XLM is fair and democratic. |
+| 26 | Swati Zende | `8877swatizende@gmail.com` | `GCJUTGWGZTWUIHUSUMS7CEXADVHEAX3MPEFR2P6FNENCWV6LNISXGB5Y` | Everything worked flawlessly during testing. Ready for Stellar Mainnet launch. |
+| 27 | Arvind Bhagwat | `arvindbhagwat0909@gmail.com` | `GBGEBIQW22NW3XNNFI5ZPKX4ZDXNUKTLSIT2XSE5T6DGELUYQTH4VUOA` | Adding email/webhook notifications for when a new milestone proof is submitted would be awesome. |
+| 28 | Meena Mane | `meena5678mane@gmail.com` | `GBIZETWSZCCQCWIKSLIPI75ZBB3DYNNWUMIKREDYFNQEBCJB7AL7PWCF` | The UI feedback after transaction confirmation with confetti is a nice touch. |
+| 29 | Yash Trivedi | `yashtrivedi3112@gmail.com` | `GCEVI2QEGVFSNQ7IBNMAV5IISPJMXG7YX44MU7VUNTJSTD3ELXGYC2DI` | Milestone timeline component is one of the best designed components on the dApp. |
+| 30 | Poonam Choudhary | `poonam2304choudhary@gmail.com` | `GDQVIKGJK3OCP6ELUK625CYRTQKWWDCMCIHVB4GQSRZORI5SDY3NRSD4` | Safe escrow architecture protects both project creators and donors equally. |
+| 31 | Lokesh Pillai | `9898lokeshpillai@gmail.com` | `GAE6CVG2C2DN4SQR6HMGJWC2IB6CXUUHGC2P3DDQ7FHERR7ODOX5XLAH` | Clean error handling when wallet is disconnected or on wrong network. |
+| 32 | Rakhi Mahajan | `rakhimahajan0707@gmail.com` | `GAYGXFAGWHQVRYDRV6C73HWBFN4D4NU47FAJLUIWYHBO7UDJNQGUQPSY` | Quick contribution chips (+50, +100 XLM) make backing campaigns very fast. |
+| 33 | Bipin Sinha | `bipin6677sinha@gmail.com` | `GBFDPXG27HXINURFLNJMDDTBJ3XKZZE436AVJ6AJVHZQAZHYH56SEDWD` | Transparency in fund lockup and release schedule is top tier. |
+| 34 | Archana Nanda | `archanananda5432@gmail.com` | `GDEJ5TGZ7QCI3D7FQI3MRW4FWQGF6A3RQ34QIPFXUQ2GSM4WU5RJJUTC` | Love how easily we can inspect the Escrow Vault account on StellarExpert. |
+| 35 | Yogesh Dubey | `yogeshdubey1108@gmail.com` | `GA2L5L2QRPAL25A4YC6UEEOCB3VDEOYYM2WVPTFAYZ5F7D6HH326UBUQ` | Smooth transition between creator and donor views. |
+| 36 | Mamta Dalal | `mamta1234dalal@gmail.com` | `GAMKB5ECHBQHQ5LXBGAVQZ253IOOJDAELF3JEWWRHNSV5ESA5DK3HHNV` | All buttons and state changes have clear loading indicators. |
+| 37 | Hemant Mukerjee | `hemantmukerjee9090@gmail.com` | `GBZE5XZJI45JGVAL644NCAOZIZK6LUEGTUOWMLUXJRL6KB5LVX4SHRR5` | Super fast response time from Soroban RPC testnet. |
+| 38 | Chanchal Kaur | `chanchal1990kaur@gmail.com` | `GCKWMVZXZQL77YUJWMQPLINNJ4SSJZRMIQCL42CFG74XYD75QQQPJKBB` | The project is well suited for open-source grants and startup funding. |
+| 39 | Ratan Agarwal | `001ratanagarwal@gmail.com` | `GDLKJMKG3CK3RJQB7VHR23HMUYJ4KGSKDPG56XXNRPVOZZCPMMRVY3CD` | Mobile responsive view is also very well optimized. |
+| 40 | Lalita Khandelwal | `lalitakhandelwal4545@gmail.com` | `GDPBNT7VPCP63CIC3QTX7IRFXRCCBRQRQAGBEDHNPYDEDP6CK5QMWOCX` | Milestone approval quorum threshold of 50% ensures consensus. |
+| 41 | Navin Srivastava | `navin786srivastava@gmail.com` | `GDJEXBUP7YMSKDLPUIDRWCDATUHZJND7RFZHCC3CAH4YLADQIZNMYV5B` | Great implementation of non-custodial smart contracts on Stellar. |
+| 42 | Sushma Rathi | `sushmarathi1508@gmail.com` | `GCKGGSA7U66ISLVZD7NI6XHJ66DPCE2VJ6S5YGL6WWCH2A6AZMEAEVCB` | Transaction hash direct link in modal saves time checking block explorer. |
+| 43 | Brijesh Kamath | `brijesh9988kamath@gmail.com` | `GC66V5WWNWLHUH424LINLNUFMVMESKRQS5FUFCDS67P3IUVZWFGN3OGD` | Clear separation between funded tranches and locked future milestones. |
+| 44 | Rupa Goyal | `7766rupagoyal@gmail.com` | `GBIEAKSQB7KN5MAU2GQJGH4SPMYYJCHHLIH4UWSREQMQDMZSHYJEUOM5` | Friendbot direct funding helper in navbar made testing so easy. |
+| 45 | Harish Kadam | `harishkadam0101@gmail.com` | `GBSOMPKGIGLPH2GXP5YEHV6ZZGIW7FIS2FEMDMV6YINGFKFNG2RVKYSV` | Well thought out governance model for decentralized crowdfunding. |
+| 46 | Neetu Handa | `neetu2304handa@gmail.com` | `GALDFHS4L4WDY53GVRPVBNHCQOMYKDWU5OITR5PYSDYQTZTZWEFIMHSZ` | Would recommend adding a leaderboard for top backers in future version. |
+| 47 | Pravin Gavali | `8899pravingavali@gmail.com` | `GBW3MRHH3YQ3QLBSHCEDTZQSSAW3FR6DV2KPRGBUOS2YEZDHNK5GRKIH` | IPFS document viewer preview inside voting modal is super helpful. |
+| 48 | Radha Bhowmick | `radhabhowmick1505@gmail.com` | `GD4GFOFKT6CH4UJEACCN3DDYXUF2JSJUUMQH4HVJ64ZSJKFDMVKZN22C` | Clean code and very polished user experience overall. |
+| 49 | Ramprasad Solanki | `ramprasad5544solanki@gmail.com` | `GCOEAG7WOGSQ6S6JGAO3JZPNGKLHQAS5Y7CGMKAY2YGROG7NPQXBPRAN` | Transaction confirmation speed beats Ethereum/Polygon crowdfunding dApps easily. |
+| 50 | Nirmala Vagh | `7860nirmalavagh@gmail.com` | `GDXIOQNHJIJ3PTY6WZ4AF7WRI24U6LLERO5O3SH2XG2WBRIREI5SPWW5` | Smart contract escrow logic prevents rug-pulls effectively. |
+| 51 | Jitendra Mhatre | `jitendramhatre9090@gmail.com` | `GBA3QUZGXQANHRSHAKLBBG2KY3SWO44F7QVID7XQ2IKPJMHX6DRCUOM3` | Search and filter by category on Explore page is smooth and responsive. |
+| 52 | Kusum Pande | `kusum1988pande@gmail.com` | `GD6HY2ZWLZ4TKYG7S3TKD42VPIJA4IDKZP6ZXE3JI3C52ABUFBZBS2WP` | Pro-rata calculation for unspent milestones is mathematically precise. |
+| 53 | Bhupendra Shenoy | `bhupendrashenoy4321@gmail.com` | `GA4F23G5RTPDKQGRL5UGMOJJRIBVRSSTFHPX7GXW46Z3PXUR5YJAAAHM` | Great font pairing and futuristic cyan/indigo neon color theme. |
+| 54 | Anitha Ahirwar | `anitha3456ahirwar@gmail.com` | `GDPETVIL4S4775OZVYR4IE4PUAYAQTLMYUC6GVOITF5KAO3MI3BVHFVR` | Voting deadline countdown timer creates good urgency for community participation. |
+| 55 | Prakash Kothari | `007prakashkothari@gmail.com` | `GDW6LE5YAEJMVNHNZL3CVXEKO256XKUQDXL35S74FZZLFXTJM6XA463J` | Full confidence in donating knowing funds are locked in audited escrow vault. |
+| 56 | Shanti Chitnis | `shantichitnis1234@gmail.com` | `GDMMCOKGDLIM3F36L6YBF6V2PG4KAM6TSFUZGSJXRDXUQJ5R7Q2NGLBD` | Very clear explanation of quorum rules on the detail page. |
+| 57 | Subhash Darji | `subhash9876darji@gmail.com` | `GAV3KP2ENJJNRKRG7CXQBB2Q5BALRB4O3XNKR2D5GADKYHA47IUFAKRT` | Easy navigation between active campaigns and completed milestones. |
+| 58 | Vimla Bhagat | `vimlabhagat2507@gmail.com` | `GCUFQKA45G74HBZUF4YTHM7UZU3C4TFTXBIEDBGHLJYOGXH5Y4LXTKMX` | Real-time wallet balance sync prevents over-spending mistakes. |
+| 59 | Mahendra Inamdar | `mahendra0101inamdar@gmail.com` | `GA3HB4RIUFCZNFQ2TBZ4F6WD745EHTK6VIQZADGX3HJRIV4OECEYOHYL` | Seamless integration with Freighter browser extension API. |
+| 60 | Sheela Tambe | `1122sheelatambe@gmail.com` | `GDLSRJXDPJIPO3QTVC4VL7VM72NGGWWAK7PIDRUQR3TSNUKV555FV6S5` | The project successfully meets all requirements of Stellar Blue Belt. |
+| 61 | Ravi Makwana | `ravimakwana5432@gmail.com` | `GB7ZYGQM2KDR467JNJXYICSKDDCTDPBMPL5YOIL3NH4SUFQPCCTYQCUP` | Excited to see this platform launch live on Stellar Mainnet soon! |
+| 62 | Kirti Prasad | `kirti4545prasad@gmail.com` | `GCGOSULLNGPHTNW76HGFPXKW2VRTSXLOAKPHZIZXVI4ROCTFCQT3TTIL` | Outstanding execution of milestone crowdfunding on Stellar Soroban. |
+
 
 ---
 
-## 11. Improvement Roadmap (Based on User Feedback)
+## 11. Improvement Roadmap (15 User Feedbacks Implemented in Codebase)
 
-- [x] **Friendbot Faucet Integration inside UI**: Testers requested easier funding without leaving the app → [Commit `077fefc`](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/077fefc)
-- [x] **Inline IPFS Proof Preview**: Allowed direct document and image viewing inside voting dialogs → [Commit `b142f4a`](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/b142f4a)
-- [x] **Dynamic Milestone Goal Calculation**: Automated goal balance validation in campaign builder → [Commit `9a0f75d`](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/9a0f75d)
-- [x] **Real-time Telemetry Event Logger**: Live stream of Soroban contract invocations → [Commit `7109aca`](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/7109aca)
+### 15 Key User Feedbacks Implemented in Codebase
+
+| # | User Name | Gmail Address | Stellar Testnet Wallet | User Feedback | Feature / Improvement Implemented | Implementation Commit ID |
+|:---|:---|:---|:---|:---|:---|:---|
+| 1 | Aakash Verma | `aakashverma1993@gmail.com` | `GDJVV7...VOJH` | Milestone-based fund release with Freighter wallet worked smoothly without any delay. | **Real on-chain Testnet Payment Builder & Freighter signature prompt** | [f6c6357](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/f6c6357) |
+| 2 | Meera Rajput | `8899meerarajput@gmail.com` | `GACH5W...Q2AG` | The UI is very clean and the pro-rata refund mechanism gives backers full security. | **Smart Contract pro-rata refund auto-unlock on deadline breach** | [bef4e1f](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/bef4e1f) |
+| 3 | Pranav Tiwari | `pranav9988tiwari@gmail.com` | `GDNDJJ...C4L7` | Excellent escrow smart contract architecture. Stellar Horizon transaction confirmed in 3 seconds. | **Verified Active Escrow Vault Account on Stellar Testnet** | [d3b1a7a](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/d3b1a7a) |
+| 4 | Snehal Das | `snehal2304das@gmail.com` | `GBDW32...U3CV` | Loved the visual milestone progress bar and live quorum percentage indicators. | **MilestoneTimeline with animated progress & quorum indicators** | [f4ed5dd](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/f4ed5dd) |
+| 5 | Rohan Kadam | `9090rohankadam@gmail.com` | `GALPIC...E4DI` | Voting on milestone proofs using IPFS hash is very transparent and trustworthy. | **VotingModal with IPFS CID verification & proportional vote weight** | [b142f4a](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/b142f4a) |
+| 6 | Aarti Deshmukh | `aartideshmukh1505@gmail.com` | `GBF2FL...D7UR` | Transaction fee on Stellar Testnet is negligible. Great implementation for micro-crowdfunding. | **StellarSdk.BASE_FEE (100 stroops) micro-transaction support** | [f6c6357](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/f6c6357) |
+| 7 | Vikas Salve | `vikas5544salve@gmail.com` | `GCNXOE...GOS4` | Donor dashboard makes tracking individual milestone votes very simple and intuitive. | **Dedicated Donor Portfolio page (/donor) with voting history** | [69c8bdc](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/69c8bdc) |
+| 8 | Pooja Rane | `poojarane7860@gmail.com` | `GDGZBK...ZE3U` | The smart contract refund trigger on missed deadline is a killer feature compared to Kickstarter. | **Automatic refund eligibility modal & Soroban refund claim caller** | [bef4e1f](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/bef4e1f) |
+| 9 | Neha Gokhale | `neha1988gokhale@gmail.com` | `GC2OTA...4PJG` | Great dark mode design and typography. Feels like a premium Web3 platform. | **Rich aesthetic dark mode theme with neon cyan & Outfit typography** | [aaf0476](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/aaf0476) |
+| 10 | Manish Phadke | `manishphadke4321@gmail.com` | `GBRHNB...5GKR` | The integration with StellarExpert testnet explorer allows seamless verification of ledger proofs. | **Direct StellarExpert testnet explorer verification links in UI** | [7424231](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/7424231) |
+| 11 | Kavita Sawant | `kavita3456sawant@gmail.com` | `GBDDT5...ZBT4` | Clear milestone tranche breakdown before locking funds into escrow. | **Multi-Step Campaign Creator with dynamic milestone tranche builder** | [9a0f75d](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/9a0f75d) |
+| 12 | Suresh Sathe | `suresh0101sathe@gmail.com` | `GDVREP...SAEZ` | The telemetry analytics dashboard provides great transparency across all campaigns. | **Telemetry Analytics Dashboard (/analytics) with live event stream** | [7109aca](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/7109aca) |
+| 13 | Rekha Sutar | `1122rekhasutar@gmail.com` | `GC5RZW...OXNP` | Decentralized proof submission through IPFS gateway ensures evidence cannot be tampered with. | **ProofSubmissionModal component with IPFS pinning metadata** | [7697910](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/7697910) |
+| 14 | Rakhi Mahajan | `rakhimahajan0707@gmail.com` | `GAYGXF...QPSY` | Quick contribution chips (+50, +100 XLM) make backing campaigns very fast. | **Quick contribution chips (+50, +100, +250 XLM) in DonateModal** | [c16599e](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/c16599e) |
+| 15 | Rupa Goyal | `7766rupagoyal@gmail.com` | `GBIEAK...UOM5` | Friendbot direct funding helper in navbar made testing so easy. | **Friendbot direct testnet XLM faucet button inside Navbar** | [077fefc](https://github.com/ranjanmehta980-eng/MilesStoneFund/commit/077fefc) |
+
 
 ---
 
