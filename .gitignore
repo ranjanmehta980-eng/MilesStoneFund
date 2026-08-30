@@ -11,6 +11,10 @@ build/
 .next/
 out/
 
+# Scripts (Local generator / internal utility scripts)
+scripts/
+*.script.js
+
 # Logs
 logs
 *.log
@@ -21,3 +25,4 @@ yarn-error.log*
 # System Files
 .DS_Store
 Thumbs.db
+tsconfig.tsbuildinfo
