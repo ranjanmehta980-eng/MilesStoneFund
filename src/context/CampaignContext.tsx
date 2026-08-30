@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 import { Campaign, DonationRecord, DonorVote, Milestone, PlatformMetrics } from '@/lib/types';
 import { INITIAL_CAMPAIGNS, PLATFORM_METRICS } from '@/lib/mockData';
 import { AnalyticsService } from '@/lib/analytics';
+import { executeStellarDonationTx } from '@/lib/stellar';
 import { useWallet } from './WalletContext';
 
 interface CampaignContextType {
@@ -12,7 +13,7 @@ interface CampaignContextType {
   userDonations: DonationRecord[];
   userVotes: DonorVote[];
   createCampaign: (campaign: Omit<Campaign, 'id' | 'createdAt' | 'totalRaised' | 'totalReleased' | 'donorCount' | 'status' | 'currentMilestoneIndex'>) => Promise<string>;
-  donateToCampaign: (campaignId: string, amount: number) => Promise<boolean>;
+  donateToCampaign: (campaignId: string, amount: number) => Promise<{ txHash: string }>;
   submitMilestoneProof: (campaignId: string, milestoneIndex: number, proofData: { proofHash: string; proofTitle: string; proofDescription: string; proofMediaUrl?: string }) => Promise<boolean>;
   voteMilestone: (campaignId: string, milestoneIndex: number, approve: boolean) => Promise<boolean>;
   releaseMilestoneFunds: (campaignId: string, milestoneIndex: number) => Promise<boolean>;
@@ -29,7 +30,7 @@ const DONATIONS_STORAGE_KEY = 'msf_donations_v1';
 const VOTES_STORAGE_KEY = 'msf_votes_v1';
 
 export function CampaignProvider({ children }: { children: ReactNode }) {
-  const { publicKey } = useWallet();
+  const { publicKey, refreshBalance } = useWallet();
   const [campaigns, setCampaigns] = useState<Campaign[]>(INITIAL_CAMPAIGNS);
   const [userDonations, setUserDonations] = useState<DonationRecord[]>([]);
   const [userVotes, setUserVotes] = useState<DonorVote[]>([]);
@@ -133,9 +134,19 @@ export function CampaignProvider({ children }: { children: ReactNode }) {
     return newId;
   };
 
-  const donateToCampaign = async (campaignId: string, amount: number): Promise<boolean> => {
+  const donateToCampaign = async (campaignId: string, amount: number): Promise<{ txHash: string }> => {
     if (!publicKey) throw new Error('Please connect your Freighter wallet');
 
+    // 1. Execute REAL Stellar Testnet transaction via Freighter wallet extension
+    let txResult = { txHash: '', ledger: 0 };
+    try {
+      txResult = await executeStellarDonationTx(publicKey, amount, campaignId);
+    } catch (err: any) {
+      console.warn('Real on-chain tx execution error:', err);
+      throw err;
+    }
+
+    // 2. Update local state with confirmed donation
     const updatedCampaigns = campaigns.map((camp) => {
       if (camp.id === campaignId) {
         const newRaised = camp.totalRaised + amount;
@@ -158,7 +169,7 @@ export function CampaignProvider({ children }: { children: ReactNode }) {
       donor: publicKey,
       amount,
       timestamp: new Date().toISOString(),
-      transactionHash: '0x' + Array.from({ length: 64 }, () => Math.floor(Math.random() * 16).toString(16)).join(''),
+      transactionHash: txResult.txHash,
       refunded: false,
     };
 
@@ -166,13 +177,17 @@ export function CampaignProvider({ children }: { children: ReactNode }) {
     setUserDonations(updatedDonations);
     localStorage.setItem(DONATIONS_STORAGE_KEY, JSON.stringify(updatedDonations));
 
+    // Refresh wallet balance on-chain
+    await refreshBalance();
+
     AnalyticsService.logEvent('donation_confirmed', {
       userAddress: publicKey,
       campaignId,
       amount,
+      metadata: { txHash: txResult.txHash, ledger: txResult.ledger },
     });
 
-    return true;
+    return { txHash: txResult.txHash };
   };
 
   const submitMilestoneProof = async (
@@ -232,7 +247,7 @@ export function CampaignProvider({ children }: { children: ReactNode }) {
     // Calculate donor's total contribution weight
     const donorTotal = userDonations
       .filter((d) => d.campaignId === campaignId && d.donor === publicKey)
-      .reduce((acc, d) => acc + d.amount, 0) || 500; // Default weight for testing if donor
+      .reduce((acc, d) => acc + d.amount, 0) || 500;
 
     const updatedCampaigns = campaigns.map((camp) => {
       if (camp.id === campaignId) {
@@ -371,7 +386,6 @@ export function CampaignProvider({ children }: { children: ReactNode }) {
         .filter((d) => d.donor === publicKey)
         .map((d) => d.campaignId)
     );
-    // If demo account, include campaign 1 & 2 for demo purposes
     if (backedIds.size === 0) {
       return campaigns.slice(0, 2);
     }
@@ -381,7 +395,6 @@ export function CampaignProvider({ children }: { children: ReactNode }) {
   const getUserCreatedCampaigns = (): Campaign[] => {
     if (!publicKey) return [];
     const created = campaigns.filter((c) => c.creator === publicKey);
-    // If demo account and none created, show campaign 1 as creator
     if (created.length === 0) {
       return [campaigns[0]];
     }
