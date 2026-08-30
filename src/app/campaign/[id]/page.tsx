@@ -191,26 +191,22 @@ export default function CampaignDetailPage() {
                 <table className="w-full text-left text-xs border-collapse font-mono">
                   <thead>
                     <tr className="border-b border-gray-800 text-gray-400 uppercase text-[11px] font-sans">
-                      <th className="py-2.5 px-3 font-semibold">Backer Name</th>
-                      <th className="py-2.5 px-3 font-semibold">Stellar Wallet</th>
-                      <th className="py-2.5 px-3 font-semibold">Contributed</th>
-                      <th className="py-2.5 px-3 font-semibold text-right">Explorer Proof</th>
+                      <th className="py-2.5 px-3 font-semibold">Stellar Wallet Address</th>
+                      <th className="py-2.5 px-3 font-semibold">Contributed Amount</th>
+                      <th className="py-2.5 px-3 font-semibold text-right">Blockchain Explorer Proof</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-800/60 font-sans">
                     {onChainProofs.map((proof) => (
-                      <tr key={proof.User_ID} className="hover:bg-gray-800/30 transition-colors">
-                        <td className="py-3 px-3 font-semibold text-white">
-                          {proof.User_Name}
-                        </td>
+                      <tr key={proof.ID} className="hover:bg-gray-800/30 transition-colors">
                         <td className="py-3 px-3 font-mono text-[11px] text-cyan-300">
                           <a
                             href={proof.StellarExpert_Account_URL}
                             target="_blank"
                             rel="noreferrer"
-                            className="hover:underline flex items-center gap-1"
+                            className="hover:underline flex items-center gap-1.5"
                           >
-                            <span>{proof.Stellar_Wallet_Address.substring(0, 6)}...{proof.Stellar_Wallet_Address.substring(proof.Stellar_Wallet_Address.length - 4)}</span>
+                            <span>{proof.Stellar_Wallet_Address}</span>
                             <ExternalLink className="w-3 h-3 text-gray-500" />
                           </a>
                         </td>
@@ -224,7 +220,7 @@ export default function CampaignDetailPage() {
                             rel="noreferrer"
                             className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-semibold text-cyan-300 bg-cyan-950/70 border border-cyan-800/70 hover:bg-cyan-900/80 hover:border-cyan-500 transition-all"
                           >
-                            <span>StellarExpert</span>
+                            <span>StellarExpert Tx Proof</span>
                             <ExternalLink className="w-3 h-3" />
                           </a>
                         </td>

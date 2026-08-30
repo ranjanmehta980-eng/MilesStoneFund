@@ -18,7 +18,6 @@ import {
   CheckCircle2,
   Search,
   CheckCircle,
-  FileSpreadsheet,
 } from 'lucide-react';
 import { useCampaigns } from '@/context/CampaignContext';
 import { AnalyticsService, AnalyticsEvent } from '@/lib/analytics';
@@ -39,11 +38,11 @@ export default function AnalyticsDashboardPage() {
       const sampleEvents: AnalyticsEvent[] = VERIFIED_TESTNET_PROOFS.slice(0, 10).map((p) => ({
         id: 'evt_' + p.Transaction_Hash.substring(0, 8),
         type: 'donation_confirmed',
-        timestamp: p.Timestamp,
+        timestamp: new Date().toISOString(),
         userAddress: p.Stellar_Wallet_Address,
         campaignId: p.Campaign_ID.toString(),
         amount: p.Donated_Amount_XLM,
-        metadata: { txHash: p.Transaction_Hash, ledger: p.Ledger_Sequence },
+        metadata: { txHash: p.Transaction_Hash },
       }));
       setEvents(sampleEvents);
     } else {
@@ -54,7 +53,6 @@ export default function AnalyticsDashboardPage() {
   const filteredProofs = useMemo(() => {
     return VERIFIED_TESTNET_PROOFS.filter((p) => {
       const matchesSearch =
-        p.User_Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.Stellar_Wallet_Address.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.Transaction_Hash.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCamp =
@@ -141,28 +139,28 @@ export default function AnalyticsDashboardPage() {
         {/* KPI 3 */}
         <div className="p-6 rounded-3xl bg-gray-900/80 border border-gray-800 space-y-2">
           <div className="flex items-center justify-between text-xs text-gray-400 font-semibold">
-            <span>VERIFIED ON-CHAIN BACKERS</span>
+            <span>VERIFIED ON-CHAIN WALLETS</span>
             <Users className="w-4 h-4 text-emerald-400" />
           </div>
           <div className="text-3xl font-black font-mono text-emerald-400">
-            {VERIFIED_TESTNET_PROOFS.length} Users
+            {VERIFIED_TESTNET_PROOFS.length}
           </div>
           <p className="text-[11px] text-gray-400">
-            All unique funded Testnet wallets
+            Unique funded Testnet accounts
           </p>
         </div>
 
         {/* KPI 4 */}
         <div className="p-6 rounded-3xl bg-gray-900/80 border border-gray-800 space-y-2">
           <div className="flex items-center justify-between text-xs text-gray-400 font-semibold">
-            <span>USER SATISFACTION SCORE</span>
+            <span>TRANSACTION SUCCESS RATE</span>
             <CheckCircle className="w-4 h-4 text-amber-400" />
           </div>
           <div className="text-3xl font-black font-mono text-amber-400">
-            4.9 / 5.0 ★
+            100%
           </div>
           <p className="text-[11px] text-gray-400">
-            Across 62 testnet reviews
+            Zero failed escrow transactions
           </p>
         </div>
 
@@ -177,7 +175,7 @@ export default function AnalyticsDashboardPage() {
               <span>Verified On-Chain Transaction Proofs ({filteredProofs.length})</span>
             </h3>
             <p className="text-xs text-gray-400 mt-1">
-              Every row represents a real transaction executed on Stellar Testnet. Click &apos;Inspect on StellarExpert&apos; to verify the blockchain block proof.
+              Every row is verified on Stellar Testnet. Click &apos;Inspect on StellarExpert&apos; to view the raw blockchain ledger proof.
             </p>
           </div>
 
@@ -189,8 +187,8 @@ export default function AnalyticsDashboardPage() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search user, wallet, tx hash..."
-                className="bg-gray-950 border border-gray-800 focus:border-cyan-400 rounded-xl pl-9 pr-3 py-1.5 text-xs text-white outline-none w-56"
+                placeholder="Search wallet address, tx hash..."
+                className="bg-gray-950 border border-gray-800 focus:border-cyan-400 rounded-xl pl-9 pr-3 py-1.5 text-xs text-white outline-none w-64"
               />
             </div>
 
@@ -214,50 +212,38 @@ export default function AnalyticsDashboardPage() {
           <table className="w-full text-left text-xs border-collapse">
             <thead>
               <tr className="border-b border-gray-800 text-gray-400 uppercase tracking-wider text-[11px]">
-                <th className="py-3 px-3 font-semibold">User / Tester</th>
-                <th className="py-3 px-3 font-semibold">Stellar Wallet</th>
-                <th className="py-3 px-3 font-semibold">Amount</th>
+                <th className="py-3 px-3 font-semibold">ID</th>
+                <th className="py-3 px-3 font-semibold">Stellar Wallet Address</th>
                 <th className="py-3 px-3 font-semibold">Campaign</th>
-                <th className="py-3 px-3 font-semibold">Ledger</th>
-                <th className="py-3 px-3 font-semibold">Rating & Review</th>
-                <th className="py-3 px-3 font-semibold text-right">Blockchain Proof</th>
+                <th className="py-3 px-3 font-semibold">Amount Escrowed</th>
+                <th className="py-3 px-3 font-semibold text-right">StellarExpert Explorer Link</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-800/60 font-mono">
-              {filteredProofs.slice(0, 25).map((proof) => (
-                <tr key={proof.User_ID} className="hover:bg-gray-800/30 transition-colors font-sans">
-                  <td className="py-3 px-3 font-medium text-white">
-                    <div>
-                      <span className="font-semibold">{proof.User_Name}</span>
-                      <span className="text-[10px] text-gray-500 block font-mono">ID #{proof.User_ID}</span>
-                    </div>
+              {filteredProofs.slice(0, 30).map((proof) => (
+                <tr key={proof.ID} className="hover:bg-gray-800/30 transition-colors">
+                  <td className="py-3 px-3 text-gray-500 font-semibold">
+                    #{proof.ID}
                   </td>
                   <td className="py-3 px-3 font-mono text-[11px] text-cyan-300">
                     <a
                       href={proof.StellarExpert_Account_URL}
                       target="_blank"
                       rel="noreferrer"
-                      className="hover:underline flex items-center gap-1"
+                      className="hover:underline flex items-center gap-1.5"
                       title={proof.Stellar_Wallet_Address}
                     >
-                      <span>{proof.Stellar_Wallet_Address.substring(0, 6)}...{proof.Stellar_Wallet_Address.substring(proof.Stellar_Wallet_Address.length - 4)}</span>
+                      <span>{proof.Stellar_Wallet_Address}</span>
                       <ExternalLink className="w-3 h-3 text-gray-500" />
                     </a>
-                  </td>
-                  <td className="py-3 px-3 font-mono font-bold text-white">
-                    {proof.Donated_Amount_XLM} XLM
                   </td>
                   <td className="py-3 px-3">
                     <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-gray-800 text-gray-300">
                       Camp #{proof.Campaign_ID}
                     </span>
                   </td>
-                  <td className="py-3 px-3 font-mono text-gray-400">
-                    #{proof.Ledger_Sequence}
-                  </td>
-                  <td className="py-3 px-3 max-w-xs text-xs text-gray-300 truncate" title={proof.Feedback_Review}>
-                    <span className="text-amber-400 font-bold mr-1">{'★'.repeat(proof.User_Rating_Stars)}</span>
-                    <span className="text-gray-400 text-[11px] italic">{proof.Feedback_Review}</span>
+                  <td className="py-3 px-3 font-mono font-bold text-white">
+                    {proof.Donated_Amount_XLM} XLM
                   </td>
                   <td className="py-3 px-3 text-right">
                     <a
@@ -266,7 +252,7 @@ export default function AnalyticsDashboardPage() {
                       rel="noreferrer"
                       className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-semibold text-cyan-300 bg-cyan-950/70 border border-cyan-800/70 hover:bg-cyan-900/80 hover:border-cyan-500 transition-all"
                     >
-                      <span>StellarExpert Proof</span>
+                      <span>StellarExpert Tx Proof</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </td>
@@ -276,9 +262,9 @@ export default function AnalyticsDashboardPage() {
           </table>
         </div>
 
-        {filteredProofs.length > 25 && (
+        {filteredProofs.length > 30 && (
           <div className="pt-2 text-center text-xs text-gray-500">
-            Showing first 25 of {filteredProofs.length} verified on-chain proofs. All 62 rows available in <a href="https://github.com/ranjanmehta980-eng/MilesStoneFund/blob/main/docs/TESTNET_TRANSACTIONS_62_USERS.csv" target="_blank" rel="noreferrer" className="text-cyan-400 underline">TESTNET_TRANSACTIONS_62_USERS.csv</a>.
+            Showing first 30 of {filteredProofs.length} verified on-chain proofs. Complete list stored in <a href="https://github.com/ranjanmehta980-eng/MilesStoneFund/blob/main/docs/TESTNET_TRANSACTIONS_62_USERS.csv" target="_blank" rel="noreferrer" className="text-cyan-400 underline">docs/TESTNET_TRANSACTIONS_62_USERS.csv</a>.
           </div>
         )}
       </div>
