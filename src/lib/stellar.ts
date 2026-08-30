@@ -16,8 +16,8 @@ export const STELLAR_CONFIG = {
   horizonUrl: 'https://horizon-testnet.stellar.org',
   friendbotUrl: 'https://friendbot.stellar.org',
   contractId: process.env.NEXT_PUBLIC_CONTRACT_ID || 'CBTY543E4B75N32Z77W6V5P2K76U7Y4NKLMZ7UQQ7X43D23V46B4MLST',
-  // Escrow Vault Account on Testnet to receive and hold locked campaign funds
-  escrowVaultAddress: 'GB7N5B3WQK6ZTY72W4M8Q9XL6K4D7E5R3T2Y1U0P9O8I7U6Y5T4R3E2W',
+  // Active, verified & funded Escrow Vault Account on Stellar Testnet
+  escrowVaultAddress: 'GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD',
 };
 
 export interface WalletState {
@@ -52,7 +52,7 @@ export async function connectFreighterWallet(): Promise<{ publicKey: string; net
 
     const access = await requestAccess();
     if (access.error || !access.address) {
-      throw new Error(access.error || 'Access denied by user.');
+      throw new Error(access.error || 'Access denied by user in Freighter.');
     }
 
     let networkName = 'TESTNET';
@@ -76,6 +76,10 @@ export async function connectFreighterWallet(): Promise<{ publicKey: string; net
  */
 export async function fetchAccountBalance(publicKey: string): Promise<string> {
   try {
+    if (!StellarSdk.StrKey.isValidEd25519PublicKey(publicKey)) {
+      return '0.00';
+    }
+
     const res = await fetch(`${STELLAR_CONFIG.horizonUrl}/accounts/${publicKey}`);
     if (!res.ok) {
       if (res.status === 404) {
@@ -120,19 +124,37 @@ export async function executeStellarDonationTx(
   campaignId: string
 ): Promise<{ txHash: string; ledger: number }> {
   try {
+    // 1. Validate donor public key format
+    if (!donorPublicKey || !StellarSdk.StrKey.isValidEd25519PublicKey(donorPublicKey)) {
+      throw new Error('Invalid connected Stellar public key.');
+    }
+
+    const destination = STELLAR_CONFIG.escrowVaultAddress;
+    if (!StellarSdk.StrKey.isValidEd25519PublicKey(destination)) {
+      throw new Error('Invalid Escrow Vault destination address.');
+    }
+
     const server = new StellarSdk.Horizon.Server(STELLAR_CONFIG.horizonUrl);
 
-    // 1. Fetch current sequence number for donor account
-    const account = await server.loadAccount(donorPublicKey);
+    // 2. Fetch donor account sequence from Horizon
+    let account: any;
+    try {
+      account = await server.loadAccount(donorPublicKey);
+    } catch (err: any) {
+      if (err?.response?.status === 404) {
+        throw new Error('Your Stellar account is not funded on Testnet yet. Click Friendbot in the navbar to fund it with test XLM!');
+      }
+      throw err;
+    }
 
-    // 2. Build real payment transaction to the escrow destination with memo
+    // 3. Build valid payment transaction with memo
     const transaction = new StellarSdk.TransactionBuilder(account, {
       fee: StellarSdk.BASE_FEE,
       networkPassphrase: STELLAR_CONFIG.networkPassphrase,
     })
       .addOperation(
         StellarSdk.Operation.payment({
-          destination: STELLAR_CONFIG.escrowVaultAddress,
+          destination: destination,
           asset: StellarSdk.Asset.native(),
           amount: amountXLM.toFixed(7),
         })
@@ -143,17 +165,17 @@ export async function executeStellarDonationTx(
 
     const unsignedXdr = transaction.toXDR();
 
-    // 3. Prompt user's Freighter wallet extension to sign
+    // 4. Prompt user's Freighter wallet extension to sign
     const signResult = await signTransaction(unsignedXdr, {
       networkPassphrase: STELLAR_CONFIG.networkPassphrase,
       address: donorPublicKey,
     });
 
     if (signResult.error || !signResult.signedTxXdr) {
-      throw new Error(signResult.error || 'User rejected transaction in Freighter wallet.');
+      throw new Error(signResult.error || 'Transaction was cancelled in Freighter wallet.');
     }
 
-    // 4. Submit signed transaction XDR to Stellar Horizon Testnet
+    // 5. Submit signed transaction XDR to Stellar Horizon Testnet
     const signedTx = StellarSdk.TransactionBuilder.fromXDR(
       signResult.signedTxXdr,
       STELLAR_CONFIG.networkPassphrase
@@ -167,7 +189,6 @@ export async function executeStellarDonationTx(
     };
   } catch (err: any) {
     console.error('Real Stellar transaction error:', err);
-    // If Horizon returned an error with extras
     if (err?.response?.data?.extras?.result_codes) {
       const codes = err.response.data.extras.result_codes;
       throw new Error(`Stellar Horizon Error: ${codes.transaction || codes.operations?.join(', ')}`);
