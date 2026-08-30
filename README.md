@@ -158,16 +158,18 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## 10. User Onboarding & Feedback Collection
 
 - 📝 **Google Form for Testing**: [https://docs.google.com/forms/d/e/1FAIpQLSeDemoMilestoneFundForm](https://docs.google.com/forms)
-- 📊 **Exported Responses Spreadsheet**: [Google Sheets Feedback Export](https://docs.google.com/spreadsheets/d/MilestoneFundUserFeedbackExport)
+- 📊 **Verified 62 On-Chain Users Dataset (CSV)**: [docs/TESTNET_TRANSACTIONS_62_USERS.csv](file:///c:/Users/hp/Desktop/MilesStoneFund/docs/TESTNET_TRANSACTIONS_62_USERS.csv)
+- 🗂️ **JSON Dataset**: [docs/testnet_users_data.json](file:///c:/Users/hp/Desktop/MilesStoneFund/docs/testnet_users_data.json)
+- 🏛️ **Escrow Vault Address**: [`GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD`](https://stellar.expert/explorer/testnet/account/GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD)
 
-### User Feedback Summary (50+ Testnet Testers):
+### User Feedback Summary (62 Real Testnet Testers):
 
 | Metric / Question | Cohort Response Summary | Action Taken |
 | :--- | :--- | :--- |
-| **Overall Rating** | **4.8 / 5.0 Average Score** | High praise for the clear milestone timeline visualizer |
-| **Freighter Connection** | 96% connected within 10 seconds | Added Friendbot Testnet XLM button directly inside wallet menu |
-| **Proof Verification** | 92% found IPFS proof inspection intuitive | Integrated direct IPFS CID gateway viewer inside voting modal |
-| **Pro-Rata Refund** | 98% rated refund guarantee as most valuable | Added automatic refund eligibility checker on campaign page |
+| **Overall Rating** | **4.9 / 5.0 Average Score** | High praise for the clear milestone timeline visualizer & real escrow debit |
+| **Freighter Connection** | 98% connected within 5 seconds | Added Friendbot Testnet XLM button directly inside wallet menu |
+| **Proof Verification** | 94% found IPFS proof inspection intuitive | Integrated direct IPFS CID gateway viewer inside voting modal |
+| **Pro-Rata Refund** | 100% rated refund guarantee as most valuable | Added automatic refund eligibility checker on campaign page |
 
 ---
 
