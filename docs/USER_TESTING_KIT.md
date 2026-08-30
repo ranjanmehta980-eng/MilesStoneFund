@@ -29,11 +29,11 @@
 
 ---
 
-## 2. Google Form Specifications
+## 2. Google Form & Live Response Sheet Links
 
-**Form Title**: `MilestoneFund — User Feedback & Testnet Testing Survey`  
-**Description**:  
-> Thank you for testing **MilestoneFund**, a milestone-based trustless crowdfunding platform built on Stellar Soroban smart contracts. Your honest feedback helps us improve the user experience before our Stellar Mainnet launch!
+- 📝 **Google Form Link (Edit/Manage)**: [MileStoneFund (feedback) - Google Forms](https://docs.google.com/forms/d/1-859KcypJ_6POAPmFfvFf5BoMvwJdY6mSKXGs0E9Rhk/edit)
+- 🔗 **Public Testing Link**: [https://forms.gle/FrR3HEh92xkfLSE97](https://forms.gle/FrR3HEh92xkfLSE97)
+- 📊 **Live Google Sheets Response Sheet (62 Responses)**: [MileStoneFund User Feedback Responses](https://docs.google.com/spreadsheets/d/1TUhfnZIVLS3bGfHjWJHlgp_QiMxpFWB0j_b3rac8Qp8/edit?usp=sharing)
 
 ### Form Questions:
 1. **Stellar Testnet Wallet Address** (Public key starting with 'G...')

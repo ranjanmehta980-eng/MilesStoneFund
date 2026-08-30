@@ -157,8 +157,9 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 10. User Onboarding & Feedback Collection
 
-- 📝 **Google Form for Testing**: [https://docs.google.com/forms/d/e/1FAIpQLSeDemoMilestoneFundForm](https://docs.google.com/forms)
-- 📊 **Verified 62 On-Chain Users Dataset (CSV)**: [docs/TESTNET_TRANSACTIONS_62_USERS.csv](file:///c:/Users/hp/Desktop/MilesStoneFund/docs/TESTNET_TRANSACTIONS_62_USERS.csv)
+- 📝 **Google Form for Testing**: [MileStoneFund (feedback) - Google Forms](https://docs.google.com/forms/d/1-859KcypJ_6POAPmFfvFf5BoMvwJdY6mSKXGs0E9Rhk/edit) *(Public Link: [https://forms.gle/FrR3HEh92xkfLSE97](https://forms.gle/FrR3HEh92xkfLSE97))*
+- 📊 **Live Google Sheets Response Sheet (62 Responses)**: [MileStoneFund User Feedback Responses](https://docs.google.com/spreadsheets/d/1TUhfnZIVLS3bGfHjWJHlgp_QiMxpFWB0j_b3rac8Qp8/edit?usp=sharing)
+- 📁 **Verified 62 On-Chain Users Dataset (CSV)**: [docs/TESTNET_TRANSACTIONS_62_USERS.csv](file:///c:/Users/hp/Desktop/MilesStoneFund/docs/TESTNET_TRANSACTIONS_62_USERS.csv)
 - 🗂️ **JSON Dataset**: [docs/testnet_users_data.json](file:///c:/Users/hp/Desktop/MilesStoneFund/docs/testnet_users_data.json)
 - 🏛️ **Escrow Vault Address**: [`GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD`](https://stellar.expert/explorer/testnet/account/GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD)
 
