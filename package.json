@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "npm run test:types",
+    "test:types": "tsc --noEmit",
+    "test:contracts": "cd contracts/milestone_fund && cargo test"
   },
   "dependencies": {
     "@stellar/freighter-api": "^3.0.4",
