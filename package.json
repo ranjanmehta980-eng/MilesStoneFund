@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "node scripts/run_tests.js",
+    "test": "node tests/run_tests.js",
     "test:types": "tsc --noEmit",
     "test:contracts": "cd contracts/milestone_fund && cargo test"
   },
