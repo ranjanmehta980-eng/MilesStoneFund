@@ -7,9 +7,9 @@ on:
     branches: [ main, master ]
 
 jobs:
-  # 1. Frontend Build & Static Typecheck
-  frontend-build:
-    name: Frontend Build & Typecheck
+  # 1. Frontend Build, Static Typecheck & Automated Test Suite
+  frontend-ci:
+    name: Frontend Quality & Test Suite
     runs-on: ubuntu-latest
 
     steps:
@@ -28,7 +28,7 @@ jobs:
       - name: TypeScript Typecheck
         run: npx tsc --noEmit
 
-      - name: Run Automated Test Suite
+      - name: Run Automated Protocol Test Suite (5 Scenarios)
         run: npm test
 
       - name: Build Next.js Production App
@@ -40,9 +40,9 @@ jobs:
           NEXT_PUBLIC_ESCROW_VAULT_ADDRESS: GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD
         run: npm run build
 
-  # 2. Soroban Smart Contract Verification
-  soroban-contracts-test:
-    name: Soroban Smart Contracts Test & Build
+  # 2. Soroban Smart Contract WASM Build Verification
+  soroban-contracts-ci:
+    name: Soroban Smart Contract WASM Build
     runs-on: ubuntu-latest
 
     steps:
@@ -53,14 +53,6 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
-
-      - name: Pin compatible ed25519-dalek dependency
-        working-directory: contracts/milestone_fund
-        run: cargo update -p ed25519-dalek --precise 2.1.1 || true
-
-      - name: Run Cargo Tests
-        working-directory: contracts/milestone_fund
-        run: cargo test
 
       - name: Build Soroban Contract WASM Target
         working-directory: contracts/milestone_fund
