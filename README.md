@@ -58,83 +58,44 @@ The Stellar blockchain and Soroban smart contract environment provide the ideal 
 
 ---
 
-## 4. Visual Showcase & Verification Screenshots
+## 4. Screenshots & Visual Proofs
 
-### 🖼️ 1. Product Desktop UI
-> *Full Web3 dApp experience featuring dark neon aesthetics, real-time escrow calculations, and dynamic milestone timeline visualizer.*
-
-| Explore Campaigns Grid | Campaign Detail & Escrow Timeline | Creator Hub & Proof Submission |
-| :---: | :---: | :---: |
-| ![Explore UI](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/explore_ui.png) | ![Campaign Escrow](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/campaign_detail.png) | ![Creator Dashboard](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/creator_dashboard.png) |
+### 1. Product Desktop UI
+![Product UI](docs/screenshots/1_product_ui.png)
 
 ---
 
-### 📱 2. Mobile Responsive UI (375px Viewport)
-> *Optimized touch-first mobile interface for seamless on-the-go Freighter wallet connectivity, voting, and milestone tracking.*
-
-| Mobile Home View | Mobile Campaign View | Mobile Donation Dialog |
-| :---: | :---: | :---: |
-| ![Mobile Home](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/mobile_home.png) | ![Mobile Campaign](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/mobile_campaign.png) | ![Mobile Donate](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/mobile_donate.png) |
+### 2. Mobile Responsive UI
+![Mobile UI](docs/screenshots/2_mobile_ui.png)
 
 ---
 
-### 📊 3. Analytics Dashboard (Real Usage Data & 62 Verified On-Chain Proofs)
-> *Live telemetry tracking total testnet volume, active locked escrow balance, and interactive searchable table of 62 on-chain donor transactions with direct StellarExpert links.*
-
-| Protocol Intelligence & KPIs | 62 Verified On-Chain Backers Table |
-| :---: | :---: |
-| ![Analytics KPIs](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/analytics_kpis.png) | ![On-Chain Proofs Table](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/analytics_proofs_table.png) |
+### 3. Analytics Dashboard (With Real Usage Data)
+![Analytics Dashboard](docs/screenshots/3_analytics_dashboard.png)
 
 ---
 
-### 🔍 4. Stellar Explorer Transaction List (Multiple Real On-Chain Hashes)
-> *Verified on-chain activity on Stellar Horizon Testnet. View the live Escrow Vault account and individual transactions on StellarExpert.*
+### 4. Stellar Explorer Transaction List (Multiple Real Tx Hashes)
+![Stellar Explorer](docs/screenshots/4_stellar_explorer.png)
 
-- 🏛️ **Live Escrow Vault Account**: [`GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD`](https://stellar.expert/explorer/testnet/account/GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD)
-- 🔗 **Sample Real On-Chain Transactions**:
-  1. [`2b024e605467...`](https://stellar.expert/explorer/testnet/tx/2b024e605467fff4492c195630456dba25aecdf530419c57e1c0ba0007fcd860) — *270.5 XLM Escrow Deposit (Ledger #4415177)*
-  2. [`f3df7451f069...`](https://stellar.expert/explorer/testnet/tx/f3df7451f069958a9992e4e03451f7c8074de1c283ddc80b9ae1fffacc9270c4) — *165.5 XLM Escrow Deposit (Ledger #4415179)*
-  3. [`5b533782605d...`](https://stellar.expert/explorer/testnet/tx/5b533782605dcb6177482d214d381e7900ad21fb61e7ff7ffd6ab3f726646ce8) — *86.5 XLM Escrow Deposit (Ledger #4415181)*
-  4. [`ad9395c7a7e4...`](https://stellar.expert/explorer/testnet/tx/ad9395c7a7e4cbc31939640d9c269ec5bdb43e6120945107f35694fa0b383538) — *274.0 XLM Escrow Deposit (Ledger #4415183)*
-  5. [`2da2699e31de...`](https://stellar.expert/explorer/testnet/tx/2da2699e31de52f3abc53f8ffb149bd78ed2680a7e8ea04e88ace6b22ad2d268) — *32.0 XLM Escrow Deposit (Ledger #4415186)*
-
-| StellarExpert Escrow Ledger Proof | Stellar Horizon Transaction Explorer |
-| :---: | :---: |
-| ![StellarExpert Escrow Vault](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/stellarexpert_vault.png) | ![Stellar Transactions](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/stellarexpert_txs.png) |
+- 🏛️ **Live Escrow Vault on StellarExpert**: [`GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD`](https://stellar.expert/explorer/testnet/account/GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD)
 
 ---
 
-### 🧪 5. Automated Smart Contract Tests (3+ Tests Pass)
-> *Comprehensive Rust unit test suite covering full campaign lifecycle: campaign creation, escrow donation, milestone proof submission, proportional quorum voting, tranche release, and deadline breach pro-rata refund.*
+### 5. Automated Smart Contract Tests (3+ Tests Passing)
+![Tests Passing](docs/screenshots/5_tests_passing.png)
 
 ```bash
 $ cd contracts/milestone_fund && cargo test
-running 5 tests
-test test::test_create_campaign_and_donate ... ok
-test test::test_milestone_proof_submission ... ok
-test test::test_proportional_voting_and_quorum_met ... ok
-test test::test_milestone_fund_release ... ok
-test test::test_deadline_missed_pro_rata_refund ... ok
-
 test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.42s
 ```
 
-| Cargo Test Execution Output | WASM Target Build Verification |
-| :---: | :---: |
-| ![Cargo Test Pass](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/cargo_test_pass.png) | ![WASM Build Output](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/wasm_build.png) |
-
 ---
 
-### ⚙️ 6. GitHub Actions CI/CD Pipeline Workflow
-> *Automated continuous integration pipeline executing static typecheck, Next.js 14 production bundle build, Rust Soroban unit testing, and security vulnerability audit on every push.*
+### 6. GitHub Actions CI/CD Workflow
+![CI/CD Workflow](docs/screenshots/6_cicd_workflow.png)
 
-- 🚀 **Workflow Configuration**: [`.github/workflows/ci.yml`](file:///.github/workflows/ci.yml)
-- 🛡️ **Security Audit Workflow**: [`.github/workflows/security-audit.yml`](file:///.github/workflows/security-audit.yml)
 - 🟢 **Live Actions Status**: [![CI/CD Pipeline](https://github.com/ranjanmehta980-eng/MilesStoneFund/actions/workflows/ci.yml/badge.svg)](https://github.com/ranjanmehta980-eng/MilesStoneFund/actions/workflows/ci.yml)
-
-| GitHub Actions Workflow Run (Green) | Automated Build & Test Jobs |
-| :---: | :---: |
-| ![GitHub Actions Green](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/github_actions_green.png) | ![CI/CD Jobs](https://raw.githubusercontent.com/ranjanmehta980-eng/MilesStoneFund/main/docs/screenshots/cicd_pipeline.png) |
 
 ---
 
