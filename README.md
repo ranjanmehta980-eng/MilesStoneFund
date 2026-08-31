@@ -1,6 +1,7 @@
 # MilestoneFund — Trustless Milestone-Based Crowdfunding on Stellar Soroban
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI/CD Pipeline](https://github.com/ranjanmehta980-eng/MilesStoneFund/actions/workflows/ci.yml/badge.svg)](https://github.com/ranjanmehta980-eng/MilesStoneFund/actions/workflows/ci.yml)
 [![Stellar Protocol](https://img.shields.io/badge/Stellar-Protocol%2021-00E5FF?logo=stellar)](https://stellar.org)
 [![Soroban Smart Contracts](https://img.shields.io/badge/Soroban-Rust%20WASM-7C3AED)](https://soroban.stellar.org)
 [![Next.js 14](https://img.shields.io/badge/Frontend-Next.js%2014-000000?logo=next.js)](https://nextjs.org)
