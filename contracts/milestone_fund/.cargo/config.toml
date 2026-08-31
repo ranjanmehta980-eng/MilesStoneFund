@@ -1,0 +1,7 @@
+[profile.test]
+codegen-units = 1
+incremental = false
+
+[profile.dev]
+codegen-units = 1
+incremental = false
