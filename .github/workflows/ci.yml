@@ -28,6 +28,9 @@ jobs:
       - name: TypeScript Typecheck
         run: npx tsc --noEmit
 
+      - name: Run Automated Test Suite
+        run: npm test
+
       - name: Build Next.js Production App
         env:
           NEXT_TELEMETRY_DISABLED: 1
@@ -50,6 +53,10 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
+
+      - name: Pin compatible ed25519-dalek dependency
+        working-directory: contracts/milestone_fund
+        run: cargo update -p ed25519-dalek --precise 2.1.1 || true
 
       - name: Run Cargo Tests
         working-directory: contracts/milestone_fund
