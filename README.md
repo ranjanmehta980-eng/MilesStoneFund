@@ -61,39 +61,40 @@ The Stellar blockchain and Soroban smart contract environment provide the ideal 
 ## 4. Screenshots & Visual Proofs
 
 ### 1. Product Desktop UI
-![Product UI](docs/screenshots/1_product_ui.png)
+![Product Desktop UI](image.png)
 
 ---
 
 ### 2. Mobile Responsive UI
-![Mobile UI](docs/screenshots/2_mobile_ui.png)
+![Mobile Responsive UI](image-1.png)
 
 ---
 
 ### 3. Analytics Dashboard (With Real Usage Data)
-![Analytics Dashboard](docs/screenshots/3_analytics_dashboard.png)
+![Analytics Dashboard](image-2.png)
 
 ---
 
 ### 4. Stellar Explorer Transaction List (Multiple Real Tx Hashes)
-![Stellar Explorer](docs/screenshots/4_stellar_explorer.png)
+![Stellar Explorer](image-3.png)
 
 - 🏛️ **Live Escrow Vault on StellarExpert**: [`GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD`](https://stellar.expert/explorer/testnet/account/GBSW6X4P5UBWU2GQCA57JDZ74A5WNBYOQJFPWLAKPS2GZBEYCNJKNCCD)
 
 ---
 
-### 5. Automated Smart Contract Tests (3+ Tests Passing)
-![Tests Passing](docs/screenshots/5_tests_passing.png)
+### 5. Automated Protocol Tests (3+ Tests Passing)
+![Tests Passing](image-4.png)
 
 ```bash
-$ cd contracts/milestone_fund && cargo test
-test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.42s
+$ npm test
+✔ Test Suites: 1 passed, 1 total
+✔ Tests:       5 passed, 5 total
 ```
 
 ---
 
 ### 6. GitHub Actions CI/CD Workflow
-![CI/CD Workflow](docs/screenshots/6_cicd_workflow.png)
+![GitHub Actions CI/CD](image-5.png)
 
 - 🟢 **Live Actions Status**: [![CI/CD Pipeline](https://github.com/ranjanmehta980-eng/MilesStoneFund/actions/workflows/ci.yml/badge.svg)](https://github.com/ranjanmehta980-eng/MilesStoneFund/actions/workflows/ci.yml)
 
